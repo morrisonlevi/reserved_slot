@@ -1,0 +1,7 @@
+ARG_ENABLE('reserved_slot', 'reserved_slot support', 'no');
+
+if (PHP_RESERVED_SLOT != 'no') {
+	AC_DEFINE('HAVE_RESERVED_SLOT', 1, 'reserved_slot support enabled');
+
+	EXTENSION('reserved_slot', 'reserved_slot.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
